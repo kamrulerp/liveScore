@@ -25,7 +25,6 @@
 
         <section class="container-fluid pt-5 pb-5">
             <div class="row">
-                <h1>testing</h1>
                 
                 <div class="col-sm-3">
                     <div class="card">
