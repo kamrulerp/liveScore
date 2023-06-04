@@ -7,7 +7,7 @@ include('inc/sub_menu.php');
 
 
 <div class="container-fulid">
-    <h1>Teams text</h1>
+    <h1>Teams text 2222</h1>
 
 
 </div>
