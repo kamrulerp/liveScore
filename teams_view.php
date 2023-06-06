@@ -1,7 +1,7 @@
 <?php 
-$page = 'teams'; 
-include('inc/header.php');
-include('inc/sub_menu.php');
+    $page = 'teams'; 
+    include('inc/header.php');
+    include('inc/sub_menu.php');
  ?>
 
 
@@ -15,24 +15,16 @@ include('inc/sub_menu.php');
        <label for="tab-1">International Cricket Team</label>
        
        <div class="season_content">
+        <?php 
+            $sql = "SELECT * FROM team_info ";
+            $query = $conn->query($sql);
+            while($row = $query->fetch_object()){
+        ?>
             <div class="chip">
                 <img src="img/bd.jpg" alt="Person" width="96" height="96">
-                Bangladesh
+                 <?php echo $row->team_name;?>
             </div>
-
-            <div class="chip">
-                <img src="img/in.jpg" alt="Person" width="96" height="96">
-                India
-            </div>
-            <div class="chip">
-                <img src="img/bd.jpg" alt="Person" width="96" height="96">
-                Bangladesh
-            </div>
-
-            <div class="chip">
-                <img src="img/in.jpg" alt="Person" width="96" height="96">
-                India
-            </div>
+        <?php } ?>        
        </div> 
    </div>
     

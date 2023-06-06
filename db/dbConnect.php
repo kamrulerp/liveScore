@@ -1,13 +1,9 @@
-
-
-
-
 <?php
 
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "students";
+$dbname = "livescore";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
