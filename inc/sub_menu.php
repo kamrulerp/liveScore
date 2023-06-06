@@ -16,8 +16,4 @@
   <li class="nav-item">
     <a class="nav-link <?php if ($page == 'teams') {echo 'active';} ?>" href="teams_view.php">Teams</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link <?php if ($page == 'series') {echo 'active';} ?>" href="live_series.php">Series Archive</a>
-  </li>
-
 </ul>
