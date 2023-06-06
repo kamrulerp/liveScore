@@ -37,9 +37,9 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="Player_entery.php">Player Info</a></li>
-                        <li><a class="dropdown-item" href="#">Team Info</a></li>
-                        <li><a class="dropdown-item" href="#"> Match Type</a></li>
-                        <li><a class="dropdown-item" href="#">Over Info</a></li>
+                        <li><a class="dropdown-item" href="team_info.php">Team Info</a></li>
+                        <li><a class="dropdown-item" href="match_type.php"> Match Type</a></li>
+                        <li><a class="dropdown-item" href="over_information.php">Over Info</a></li>
                         <li><a class="dropdown-item" href="#">Ball Info</a></li>
                         <li><a class="dropdown-item" href="#">Highlights </a></li>
                     </ul>
