@@ -1,7 +1,7 @@
 
 
 <?php
-include_once "dbconnect.php";
+include('inc/header.php');
 $msg = "";
 	if(isset($_POST['submit'])){
 		
@@ -37,7 +37,7 @@ $msg = "";
 		$team_logo = $_POST['team_logo'];
 		$team_manager = $_POST['team_manager'];
 		
-		$sql = "UPDATE `student_info` SET `name`='".$student_name."',`roll_no`='".$student_roll."',`department`='".$student_department."',`fathers_name`='".$father_name."',`mothers_name`='".$mother_name."' WHERE roll_no='".$student_roll."'";
+		$sql = "UPDATE `team_info` SET `team_id`='".$team_id."',`team_name`='".$team_name."',`team_category`='".$team_category."',`tournament`='".$tournament."',`team_member`='".$team_member."',`team_logo`='".$team_logo."' ,`team_manager`='".$team_manager."'WHERE team_id='".$team_id."'";
 		$query = $conn->query($sql);
 		
 		
@@ -63,39 +63,7 @@ $msg = "";
 
 ?>
 
-<html>
 
-	<head>
-		<title>data input</title>
-		<style>
-			body{font-family:<?php echo $fonts;?>}
-			.phpcoding{width:900px; margin:0 auto; background:#ddd;  }
-			.headeroption, .footeroption {background:#444; color:#fff; text-align:center; padding:20px;}
-			.headeroption h2, .footeroption h2 {margin:0}
-			.maincontent {min-height:400px; padding:20px}
-		</style>
-	</head>
-	
-	<style>
-    div {
-        width: 500px;
-        margin: 0 auto;
-        border: 1px solid #ddd;
-        padding: 20px;
-    }
-    input{
-        width: 100%;
-        padding: 5px;
-        margin-bottom: 10px;
-    }
-    input[type="submit"]{
-        background-color: #4CAF50;
-        color: white;
-        cursor: pointer;
-    }
-</style>
-	
-	<body>
 		
 		<div class="phpcoding">
 		<section class="headeroption">
@@ -105,39 +73,52 @@ $msg = "";
 		<?php if(isset($_GET['id'])){?>
 		<a href="view.php">Go Back</a>
 		<?php } ?>
-		<section class="maincontent">
-		<form action="" method="post">
-			
+		<section class="container">
+		<form action="" method="post" enctype="multipart/form-data">
+			<div class="form-row row">
+			<div class="form-group col-md-6">
 			<label for="">Team ID:</label>
-			<input type="text" name="team_id" value="">
+			<input type="text" class="form-control" name="team_id" value="">
+			</div>
+			<div class="form-group col-md-6">
 			<label for="">Team Name:</label>
-			<input type="text" name="team_name" value="">
+			<input type="text" name="team_name" class="form-control" value="">
+			</div>
+			<div class="form-group col-md-6">
 			<label for="">Team Category:</label>
-			<input type="text" name="team_category" value="">
+			<input type="text" name="team_category" class="form-control" value="">
+			</div>
+			<div class="form-group col-md-6">
 			<label for="">Tournament Name:</label>
-			<input type="text" name="tournament" value="">
+			<input type="text" name="tournament" class="form-control" value="">
+			</div>
+			<div class="form-group col-md-6">
 			<label for="">Team Member:</label>
-			<input type="text" name="team_member" value="">
+			<input type="text" name="team_member" class="form-control" value="">
+			</div>
+			<div class="form-group col-md-6">
 			<label for="">Team Logo:</label>
-			<input type="file" name="team_logo" value="">
+			<input type="file" name="team_logo" class="form-control" value="">
+			</div>
+			<div class="form-group col-md-6">
 			<label for="">Team Manager:</label>
-			<input type="text" name="team_manager" value="">
+			<input type="text" name="team_manager" class="form-control" value="">
+			</div>
 			
+			
+		<div class="pt-2 pb-2" align="center">
+
 			<?php if(isset($_GET['id'])){?>
-			<input type="submit" name="update" value="Update">
-			<?php }else{ ?>
-			<input type="submit" name="submit" value="Submit">
-			<?php } ?>
+        <button  type="submit" name="update" class="btn btn-success">Update</button>
+
 			
-		
+			<?php }else{ ?>
+			<button  type="submit" name="submit" class="btn btn-success">Submit</button>
+			
+			<?php } ?>
+			</div>
+		</div>
 		</form>
 		</section>
-		<section class="footeroption">
-				<h2>Powered by liveScore</h2>
-			</section>
-		</div>
-	
-	</body>
+<?php include('inc/footer.php');?>
 
-
-</html>
