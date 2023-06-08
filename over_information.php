@@ -99,5 +99,6 @@ echo"data is not insert";
       </div>
 </div>
 
+abc
 
 <?php include('inc/footer.php');?>
