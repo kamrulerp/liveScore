@@ -14,7 +14,8 @@ $msg = "";
 		$date = $_POST['date'];
 		$time = $_POST['time'];
 		
-		$sql= "INSERT INTO `team_info`( `match_id`, `match_name`, `match_type`, `team_1`, `team_2`, `venue`, `date`, `time`) VALUES ('".$match_id."','".$match_name."','".$match_type."','".$team_1."','".$team_2."','".$venue."','".$date."','".$time."')";
+		$sql= "INSERT INTO `match_registration`( `match_id`, `match_name`, `match_type`, `team_1`, `team_2`, `venue`, `date`, `time`) 
+		VALUES ('".$match_id."','".$match_name."','".$match_type."','".$team_1."','".$team_2."','".$venue."','".$date."','".$time."')";
 		$query = $conn->query($sql);	
 		
 		
@@ -39,7 +40,7 @@ $msg = "";
 		$date = $_POST['date'];
 		$time = $_POST['time'];
 		
-		$sql = "UPDATE `team_info` SET `match_id`='".$match_id."',`match_name`='".$match_name."',`match_type`='".$match_type."',`team_1`='".$team_1."',`team_2`='".$team_2."',`venue`='".$venue."' ,`date`='".$date."',`time`='".$time."WHERE match_id='".$match_id."'";
+		$sql = "UPDATE `match_registration` SET `match_id`='".$match_id."',`match_name`='".$match_name."',`match_type`='".$match_type."',`team_1`='".$team_1."',`team_2`='".$team_2."',`venue`='".$venue."' ,`date`='".$date."',`time`='".$time."WHERE match_id='".$match_id."'";
 		$query = $conn->query($sql);
 		
 		
@@ -51,17 +52,7 @@ $msg = "";
 	
 	}
 	
-	if(isset($_GET['id'])){
 	
-		$roll_no = $_GET['id'];
-		
-		$sql = "select s.*, r.*, a.* from student_info s, results r, address a where s.roll_no=r.roll_no and s.roll_no=a.roll_num and s.roll_no='".$roll_no."' ";
-	
-		$query = $conn->query($sql);
-		
-		$row = $query->fetch_object();
-	
-	}
 
 ?>
 
@@ -87,16 +78,25 @@ $msg = "";
 			<input type="text" name="match_name" class="form-control" value="">
 			</div>
 			<div class="form-group col-md-6">
-			<label for="">Match Category:</label>
-			<input type="text" name="match_type" class="form-control" value="">
+			<label for="">Match Type:</label>
+			<select name="match_type" class="form-control">
+				<option value="">Select Match Type</option>
+				<?php select('match_type','id','type','1');?>
+			</select>
 			</div>
 			<div class="form-group col-md-6">
 			<label for="">Team 1:</label>
-			<input type="text" name="team_1" class="form-control" value="">
+			<select name="team_1" class="form-control">
+				<option value="">Select Team</option>
+				<?php select('team_info','id','team_name','1');?>
+			</select>
 			</div>
 			<div class="form-group col-md-6">
 			<label for="">Team 2:</label>
-			<input type="text" name="team_2" class="form-control" value="">
+			<select name="team_2" class="form-control">
+				<option value="">Select Team</option>
+				<?php select('team_info','id','team_name','1');?>
+			</select>
 			</div>
 			<div class="form-group col-md-6">
 			<label for="">Match Venue:</label>
@@ -112,14 +112,14 @@ $msg = "";
 			</div>
 			
 			
-		<div class="pt-2 pb-2" align="center">
-
+		<div class="pt-2 pb-2">
 			<button  type="submit" name="submit" class="btn btn-success">Submit</button>
-			
-			
-			</div>
+		</div>
+
 		</div>
 		</form>
+
+
 		</section>
 <?php include('inc/footer.php');?>
 
