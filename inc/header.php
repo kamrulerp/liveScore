@@ -37,7 +37,7 @@
                         Entry Pages
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="Player_entery.php">Player Info</a></li>
+                        <li><a class="dropdown-item" href="Player_entry.php">Player Info</a></li>
                         <li><a class="dropdown-item" href="team_info.php">Team Info</a></li>
                         <li><a class="dropdown-item" href="match_type.php"> Match Type</a></li>
                         <li><a class="dropdown-item" href="over_information.php">Over Info</a></li>
