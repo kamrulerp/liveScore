@@ -1,15 +1,24 @@
 <?php include('inc/header.php')?>
-        <section class="mt-2">
+        <section class="mt-0">
             <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="img/1.jpg" class="d-block w-100 custom-height" alt="...">
+                <img src="img/slide/1.png" class="d-block w-100 custom-height" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="img/2.jpg" class="d-block w-100 custom-height" alt="...">
+                <img src="img/slide/2.png" class="d-block w-100 custom-height" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="img/3.webp" class="d-block w-100 custom-height" alt="...">
+                <img src="img/slide/3.png" class="d-block w-100 custom-height" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/slide/4.png" class="d-block w-100 custom-height" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/slide/5.png" class="d-block w-100 custom-height" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/slide/6.png" class="d-block w-100 custom-height" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
