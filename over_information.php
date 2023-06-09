@@ -31,16 +31,13 @@ else{
 echo"data is not insert";
 }
 
-
-
-
-
 }
 
 ?>
  
 
    <div class="container-fulid">
+
     <div class="container mt-4 mb-4 bg-light">
         <h3 class="text-center">Over  Information </h3>
 
@@ -98,7 +95,50 @@ echo"data is not insert";
         <button  type="submit" class="btn btn-success d-flax">submit</button>
       </div>
 </div>
+</form>
+</div>
 
-abc
+
+
+
+    <div class="container mt-4 mb-4 pt-4 pb-4 bg-light">
+
+    <table class="table table-bordered table-info">
+  <thead>
+    <tr>
+      
+      <th scope="col">Over No</th>
+      <th scope="col">Over Bowl</th>
+      <th scope="col">Over Ran</th>
+      <th scope="col">Over Wicket</th>
+      <th scope="col">Bowler Name</th>
+      <th scope="col">Bowler Id</th>
+      <th scope="col">Status</th>
+      <th scope="col">team name</th>
+     
+
+    </tr>
+  </thead>
+  <tbody>
+
+     
+    
+
+
+  </tbody>
+</table>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+
+
 
 <?php include('inc/footer.php');?>
+
