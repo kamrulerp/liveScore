@@ -12,7 +12,7 @@ $msg = "";
 		$number_of_players = $_POST['number_of_players'];
 		$time = $_POST['time'];
 		
-		$sql= "INSERT INTO `match_type`( `type`, `duration`, `overs`, `number_of_ball`, `number_of_players`, `time`) VALUES ('".$type."','".$duration."','".$overs."','".$number_of_ball."','".$number_of_players."','".$time."')";
+		$sql= "INSERT INTO `match_type`( `type`, `duration`, `overs`, `number_of_ball`, `number_of_players`, `time`) VALUES ('".$type."','".$duration."','".$overs."','".$number_of_ball."','".$number_of_players."','".$time."'')";
 		$query = $conn->query($sql);	
 		
 		

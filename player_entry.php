@@ -15,9 +15,28 @@ if (isset($_POST['submit'])) {
    $playing_role = $_POST['playing_role'];
    $batting_style = $_POST['batting_style'];
    $bowling_style = $_POST['bowling_style'];
+   
+  // image file upload
+  if($_FILES['player_image']['name']){
+   // check file type
+    $allowed = array('jpg','jpeg','png'); 
+    $filename = $_FILES['player_image']['name'];
+    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    if(!in_array($ext,$allowed)) {
+      echo '<div class="container alert alert-danger" role="alert">
+      <strong>Warning!</strong> Only jpg, jpeg, png file are allowed.</div>';
+    }else{
+      $player_image = $_FILES['player_image']['name'];
+      $player_image_tmp = $_FILES['player_image']['tmp_name'];
+      $new_name = time().$player_image;
+      move_uploaded_file($new_name,"img/$player_image");
+    }
+    
+  }
+
 
   $sql = "INSERT INTO `player_info`( `full_name`, `nick_name`, `player_born`, `player_birthday`, `player_gender`, `player_nationality`, `player_img`, `playing_role`, `batting_style`, `bowling_style`, `player_team_name`) 
-  VALUES ('".$full_name."','".$nick_name."','".$born_place."','".$birth_date."','".$player_gender."','".$nationality."','".$player_image."','".$playing_role."','".$batting_style."','".$bowling_style."','".$player_teams."')";
+  VALUES ('".$full_name."','".$nick_name."','".$born_place."','".$birth_date."','".$player_gender."','".$nationality."','".$new_name."','".$playing_role."','".$batting_style."','".$bowling_style."','".$player_teams."')";
 
 if ($conn->query($sql) === TRUE) {
   echo '<div class="container alert alert-success" role="alert">
@@ -63,7 +82,7 @@ if ($conn->query($sql) === TRUE) {
 
         <div class="form-group col-md-4">
         <label for="player_image">Player Image</label>
-        <input type="text" id="player_image" name="player_image" value=""  class="form-control" >
+        <input type="file" id="player_image" name="player_image" value=""  class="form-control" >
         </div>
 
         <div class="form-group col-md-4">

@@ -15,52 +15,31 @@ include('inc/sub_menu.php');
        
        <div class="season_content">
 
-       <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Month</th>
-      <th scope="col">Series Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="fw-bold">June 2023</td>
-      <td>
-        <div class="container">
-            <p class="m-0 fw-bold">Afghanistan tour of sri Lanka, 2023</p>
-            <span> Jun 02 - Jun 07</span>
-        </div>
-
-        <div class="container">
-            <p class="m-0 fw-bold">West Indies tour of UAE, 2023</p>
-            <span> Jun 04 - Jun 09</span>
-        </div>
-
-      </td>
-    </tr>
-    <tr>
-      <td class="fw-bold">July 2023</td>
-      <td>
-        <div class="container">
-            <p class="m-0 fw-bold">ICC Mens T20 World Cup Europe Qualifier 2023</p>
-            <span> July 02 - July 07</span>
-        </div>
-
-      </td>
-    </tr>
-    <tr>
-      <td class="fw-bold">August 2023</td>
-      <td>
-        <div class="container">
-            <p class="m-0 fw-bold">ICC Mens T20 World Cup Europe Qualifier 2023</p>
-            <span> August 02 - August 07</span>
-        </div>
-
-      </td>
-    </tr>
-
-  </tbody>
-</table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Month</th>
+        <th scope="col">Series Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      $sql = "SELECT * FROM `match_registration` WHERE `status` = 'Live'";
+      $query = $conn->query($sql);
+      while($row = $query->fetch_object()){
+      ?>
+      <tr>
+        <td class="fw-bold"><?php echo date('F',strtotime($row->date)); ?> <?php echo date('Y',strtotime($row->date)); ?></td>
+        <td>
+          <div class="container">
+              <p class="m-0 fw-bold"><?php echo $row->match_name; ?>, <?php echo date('Y',strtotime($row->date)); ?></p>
+              <span> <?php echo one_col('match_type','duration',"id = $row->match_type"); ?></span>
+          </div>
+        </td>
+      </tr>
+      <?php } ?>
+    </tbody>
+  </table>
 
 
        </div> 
@@ -73,38 +52,32 @@ include('inc/sub_menu.php');
        <div class="season_content">
    
        <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Month</th>
-      <th scope="col">Series Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="fw-bold">June 2023</td>
-      <td>
-        <div class="container">
-            <p class="m-0 fw-bold">Afghanistan tour of sri Lanka, 2023</p>
-            <span> Jun 02 - Jun 07</span>
-        </div>
+    <thead>
+      <tr>
+        <th scope="col">Month</th>
+        <th scope="col">Series Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      $sql = "SELECT * FROM `match_registration` WHERE `status` = 'End'";
+      $query = $conn->query($sql);
+      while($row = $query->fetch_object()){
+      ?>
+      <tr>
+        <td class="fw-bold"><?php echo date('F',strtotime($row->date)); ?> <?php echo date('Y',strtotime($row->date)); ?></td>
+        <td>
+          <div class="container">
+              <p class="m-0 fw-bold"><?php echo $row->match_name; ?>, <?php echo date('Y',strtotime($row->date)); ?></p>
+              <span> <?php echo one_col('match_type','duration',"id = $row->match_type"); ?></span>
+          </div>
+        </td>
+      </tr>
+      <?php } ?>
+    </tbody>
+  </table>
 
 
-      </td>
-    </tr>
-    <tr>
-    <tr>
-      <td class="fw-bold">August 2023</td>
-      <td>
-        <div class="container">
-            <p class="m-0 fw-bold">ICC Mens T20 World Cup Europe Qualifier 2023</p>
-            <span> August 02 - August 07</span>
-        </div>
-
-      </td>
-    </tr>
-
-  </tbody>
-</table>
        </div> 
    </div>
     
@@ -115,28 +88,31 @@ include('inc/sub_menu.php');
        <div class="season_content">
 
 
-       <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Month</th>
-      <th scope="col">Series Name</th>
-    </tr>
-  </thead>
-  <tbody>
-
-    <tr>
-      <td class="fw-bold">August 2023</td>
-      <td>
-        <div class="container">
-            <p class="m-0 fw-bold">ICC Mens T20 World Cup Europe Qualifier 2023</p>
-            <span> August 02 - August 07</span>
-        </div>
-
-      </td>
-    </tr>
-
-  </tbody>
-</table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Month</th>
+        <th scope="col">Series Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      $sql = "SELECT * FROM `match_registration` WHERE `status` = 'Upcmg'";
+      $query = $conn->query($sql);
+      while($row = $query->fetch_object()){
+      ?>
+      <tr>
+        <td class="fw-bold"><?php echo date('F',strtotime($row->date)); ?> <?php echo date('Y',strtotime($row->date)); ?></td>
+        <td>
+          <div class="container">
+              <p class="m-0 fw-bold"><?php echo $row->match_name; ?>, <?php echo date('Y',strtotime($row->date)); ?></p>
+              <span> <?php echo one_col('match_type','duration',"id = $row->match_type"); ?></span>
+          </div>
+        </td>
+      </tr>
+      <?php } ?>
+    </tbody>
+  </table>
        </div> 
    </div>
       
