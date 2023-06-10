@@ -12,7 +12,7 @@ include('inc/sub_menu.php');
     
    <div class="season_tab">
        <input type="radio" id="tab-1" name="tab-group-1" checked>
-       <label for="tab-1">International Cricket Team</label>
+       <label for="tab-1">International Cricket </label>
        
        <div class="season_content">
 
@@ -48,7 +48,7 @@ include('inc/sub_menu.php');
     
    <div class="season_tab">
        <input type="radio" id="tab-2" name="tab-group-1">
-       <label for="tab-2">Domestic Cricket Team</label>
+       <label for="tab-2">Domestic Cricket</label>
        
        <div class="season_content">
    
@@ -82,7 +82,7 @@ include('inc/sub_menu.php');
     
     <div class="season_tab">
        <input type="radio" id="tab-3" name="tab-group-1">
-       <label for="tab-3">League Cricket Team</label>
+       <label for="tab-3">League Cricket</label>
      
        <div class="season_content">
 

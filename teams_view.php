@@ -20,8 +20,8 @@
             $query = $conn->query($sql);
             while($row = $query->fetch_object()){
         ?>
-            <div class="chip">
-                <img src="img/bd.jpg" alt="Person" width="96" height="96">
+            <div class="chip m-2">
+                <img src="img/flag.jpg" alt="Person" width="96" height="96">
                  <?php echo $row->team_name;?>
             </div>
         <?php } ?>        
@@ -33,13 +33,13 @@
        <label for="tab-2">Domestic Cricket Team</label>
        
        <div class="season_content">
-       <div class="chip">
-                <img src="img/bd.jpg" alt="Person" width="96" height="96">
+       <div class="chip m-2">
+                <img src="img/flag.jpg" alt="Person" width="96" height="96">
                 Bangladesh
             </div>
 
-            <div class="chip">
-                <img src="img/in.jpg" alt="Person" width="96" height="96">
+            <div class="chip m-2">
+                <img src="img/flag.jpg" alt="Person" width="96" height="96">
                 India
             </div>
        </div> 
@@ -51,8 +51,8 @@
      
        <div class="season_content">
 
-            <div class="chip">
-                <img src="img/in.jpg" alt="Person" width="96" height="96">
+            <div class="chip m-2">
+                <img src="img/flag.jpg" alt="Person" width="96" height="96">
                 India
             </div>
        </div> 
