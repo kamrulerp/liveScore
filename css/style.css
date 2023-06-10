@@ -80,3 +80,7 @@
     width: 50px;
     border-radius: 6% 20%;
   }
+
+  .bg-color1{
+    background-color: #fff !important;
+  }

@@ -3,6 +3,10 @@
 
 
 <ul class="nav nav-tabs pt-4 ">
+
+<li class="nav-item">
+    <a class="nav-link <?php if ($page == 'Commentary') { echo 'active';} ?>" href="commentary.php">Commentary</a>
+  </li>
   <li class="nav-item">
     <a class="nav-link <?php if ($page == 'live') { echo 'active';} ?>" href="live_scores.php">Current Matches</a>
   </li>

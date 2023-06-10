@@ -77,5 +77,73 @@ $msg = "";
 		</div>
 		</form>
 		</section>
+
+		<div class="container mt-4 mb-4 pt-4 pb-4 bg-light">
+
+<table class="table table-bordered table-info">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">type</th>
+			<th scope="col">duration</th>
+			<th scope="col">overs</th>
+			<th scope="col">number_of_ball</th>
+			<th scope="col">number_of_players</th>
+
+			<th scope="col">time</th>
+			
+
+
+
+		
+
+
+
+		</tr>
+
+
+
+
+	</thead>
+	<tbody>
+		<?php
+		$sql = "SELECT * FROM  match_type";
+		$query = $conn->query($sql);
+		$i = 1;
+		while ($row = $query->fetch_object()) {
+		?>
+			<tr>
+				<td><?php echo $i++; ?></td>
+				<td> <?php echo $row->type; ?></td>
+				<td> <?php echo $row->duration; ?></td>
+				<td> <?php echo $row->overs; ?></td>
+				<td> <?php echo $row->number_of_ball; ?></td>
+				<td> <?php echo $row->number_of_players; ?></td>
+
+				<td> <?php echo $row->time; ?></td>
+				
+
+
+
+				
+
+			</tr>
+		<?php
+		}
+
+		?>
+
+	</tbody>
+</table>
+</div>
+
+
+</div>
+
+
+
+
+
+
 <?php include('inc/footer.php');?>
 
